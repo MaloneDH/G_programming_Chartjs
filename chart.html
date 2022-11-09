@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<h1>chart</h1>
+<hr>
+<h2>BC카드에서 제공한 지역별 IT서비스 업종에 대한 카드 사용통계(상대적)</h2>
+<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+<hr>
+<h2>22년 10월 ~ 22년 11월 여성, 남성 디지털/가전분야 클릭량</h2>
+<canvas id="myChart1" style="width:100%;max-width:700px"></canvas>
+<hr>
+<h2>21년 11월 14일 ~ 22년 11월 5일 각 언어별 평균 관심도</h2>
+<canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
+<div>
+    <h3>출처</h3>
+    첫번쨰 차트 : https://datalab.naver.com/local/card_result.naver<br>
+    두번째 차트 : https://datalab.naver.com/shoppingInsight/sKeyword.naver?keyword=%ED%82%A4%EB%B3%B4%EB%93%9C<br>
+    세번째 차트 : https://trends.google.com/trends/explore?q=%2Fm%2F07sbkfb,%2Fm%2F01t6b,%2Fm%2F05z1_,%2Fm%2F075st
+</div>
+<script>
+var xValues = ["21년-8월", "10월", "11월", "10월", "12월", "22년-1월", "2월", "3월", "4월"];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      label: '서울광역시',
+      data: [84, 83, 90, 89, 74, 76, 80, 80, 88],
+      borderColor: "red",
+      fill: false
+    },{
+      label: '부산광역시',
+      data: [3, 3, 3, 3, 3, 2, 2, 2, 3],
+      borderColor: 'green',
+      fill: false
+    },{
+      label: "대구광역시",
+      data: [4, 4, 3, 4, 3, 3, 1, 3, 3],
+      borderColor: "blue",
+      fill: false
+    }]
+  },
+  options: {
+    display:true
+  }
+});
+
+new Chart("myChart1", {
+  type: "doughnut",
+  data: {
+    labels: [
+    '여자',
+    '남자',
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [85, 15],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+    ],
+    hoverOffset: 4
+  }]
+    },
+    options:{
+        display:true
+    }
+});
+
+var xValues2 = ["java", "c", "python", "sql"];
+var yValues2 = [51, 22, 79, 35];
+var barColors2 = ["red", "green","blue","orange"];
+
+new Chart("myChart2", {
+  type: "bar",
+  data: {
+    labels: xValues2,
+    datasets: [{
+      backgroundColor: barColors2,
+      data: yValues2
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "World Wine Production 2018"
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+
