@@ -1,6 +1,6 @@
 # G_programming_Chartjs
 11월 9일 차트 사용 과제
-----
+
 ## 각 차트 사용 유형
 ### 사용 chart.js
 - line
